@@ -16,7 +16,10 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
 }
 
 Person::~Person(){
-    delete children;
+    delete[] children;
+//delete deallocates memory allocated for single object while
+// delete[] deallocares memory allocated for array of objects
+// was originally delete children;
 }
 
 void Person::addChild(Person *newChild){
@@ -52,6 +55,9 @@ void Person::printLineage(char dir, int level){
             father->printLineage(dir, level + 1);
         }
     }
+     delete[] temp;
+	// need to delete temp
+	// compute_relation(level) is returning a char[] (used new[]) so must use delete[] 
 }
 
 /* helper function to compute the lineage
