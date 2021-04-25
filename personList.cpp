@@ -6,16 +6,20 @@ using std::cout;
 using std::endl;
 
 PersonList::PersonList(){
-    capacity = 5;
+    capacity = 2;
     numPeople = 0;
     theList = new Person*[capacity];
 }
 
 PersonList::~PersonList(){
+    for (int count = 0; count < numPeople; count++)
+    {
+	delete theList[count];
+    }
     delete [] theList;
 }
 
-void PersonList::addPerson(const char* child_name, const char* father_name, const char* mother_name){
+void PersonList::addPerson(char* child_name, char* father_name, char* mother_name){
     Person *father = 0;
     Person *mother = 0;
     
@@ -53,7 +57,7 @@ void PersonList::insertIntoList(Person *newPerson){
     theList[numPeople++] = newPerson;
 }
 
-void PersonList::printLineage(const char* person){
+void PersonList::printLineage(char* person){
     for(int i = 0; i < numPeople; i++) {
         if(!strcmp(theList[i]->getName(), person)){
             theList[i]->printAncestors();

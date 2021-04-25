@@ -5,11 +5,11 @@
 using std::cout;
 using std::endl;
 
-Person::Person(const char *name_, Person* father_, Person* mother_){
-    name = new char[strlen(name_)+1];
-    strcpy(name, name_);
-    father = father_;
-    mother = mother_;
+Person::Person(char *thename, Person* father_, Person* mother_){
+    this->name = new char[strlen(thename)+1];
+    strcpy(this->name, thename);
+    this->father = father_;
+    this->mother = mother_;
     capacity = 1;
     numChildren = 0;
     children = new Person*[capacity];
@@ -85,6 +85,8 @@ char* Person::compute_relation(int level){
 void expand(Person ***t, int *MAX){
   Person **temp = new Person*[2 * *MAX];
   memcpy(temp, *t, *MAX * sizeof(**t));
+
+  delete[] *t;
   *MAX *= 2;
   *t = temp;
 }
