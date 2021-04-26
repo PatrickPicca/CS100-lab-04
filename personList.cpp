@@ -12,10 +12,9 @@ PersonList::PersonList(){
 }
 
 PersonList::~PersonList(){
-    for (int count = 0; count < numPeople; count++)
-    {
+    for (int count = 0; count < numPeople; count++){
 	delete theList[count];
-    }
+}
     delete [] theList;
 }
 
