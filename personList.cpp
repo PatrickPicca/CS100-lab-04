@@ -18,7 +18,7 @@ PersonList::~PersonList(){
     delete [] theList;
 }
 
-void PersonList::addPerson(const char* child_name, char* father_name, char* mother_name){
+void PersonList::addPerson(const char* child_name,const char* father_name,const char* mother_name){
     Person *father = 0;
     Person *mother = 0;
     
