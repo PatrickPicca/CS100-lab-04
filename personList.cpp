@@ -50,6 +50,7 @@ void PersonList::addPerson(const char* child_name,const char* father_name,const 
     mother->addChild(newChild);
 }
 
+
 void PersonList::insertIntoList(Person *newPerson){
     if(numPeople == capacity) expand(&theList, &capacity);
 

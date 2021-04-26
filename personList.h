@@ -8,7 +8,6 @@ class PersonList{
       int numPeople; // current number of people in theList
       int capacity; // capacity of theList array
 
-
     public:
         PersonList();
         ~PersonList();
