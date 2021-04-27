@@ -89,6 +89,7 @@ void expand(Person ***t, int *MAX){
 delete[] *t; 
  *MAX *= 2;
   *t = temp;
+	// ***t points to original array/all pointers
 	//t gives us the first element in the array (also represents the array itself) 
 	// delete *t[] will delete all the pointers in the array
 }
