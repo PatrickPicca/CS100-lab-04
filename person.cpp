@@ -15,6 +15,8 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
     children = new Person*[capacity];
 }
 //make sure array has enough space for it (+1).. other code does +1 too
+//strlen only counts the charac. before the null. therefore must add one to the value of strlen to get enough space
+
 Person::~Person(){
     delete[] children;
 delete[] name;
