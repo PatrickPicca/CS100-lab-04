@@ -14,7 +14,7 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
     numChildren = 0;
     children = new Person*[capacity];
 }
-
+//make sure array has enough space for it (+1).. other code does +1 too
 Person::~Person(){
     delete[] children;
 delete[] name;
