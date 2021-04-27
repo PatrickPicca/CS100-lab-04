@@ -15,6 +15,7 @@ PersonList::~PersonList(){
     for (int count = 0; count < numPeople; count++){
 	delete theList[count];
 }
+	// loop through theList and deleted each object that is pointed to
     delete [] theList;
 }
 
